@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+	<head>
+		<meta charset="utf-8">
+		<title>One Piece Gacha</title>
+		<link href="../CSS/confg.css" rel="stylesheet"	type="text/css">
+		<script type="text/javascript" src="../JS/archivo.js"></script>
+		<link rel="icon" href="../media/images/logo.png" type="image/png">
+	</head>
+
+	<body>
+
+		<header id="cabecera">
+
+			<nav>
+				<img class="icon" id="treasure" src="../media/images/treasure_active.png" onclick="seleccionarIcono('treasure')">
+				<img class="icon" id="luffy" src="../media/images/luffy_no_active.png" onclick="seleccionarIcono('luffy')">
+			</nav>
+
+			<div id="logo-container"><img src="../media/images/logo.png" id="logo"></div>
+
+			<div id="switch-container">
+
+				<label class="switch">
+					<input type="checkbox" id="music-switch">
+					<span class="slider"></span>
+				</label>
+
+			</div>
+			
+		</header>
+
+
+		<main>
+
+			<video autoplay muted loop id="video-fondo">
+				<source src="../media/videos/fondo.mp4" type="video/mp4">
+			</video>
+
+			<section id="pantalla">
+
+				<video id="video" muted>
+					<source src="../media/videos/summon_animation.mp4">
+				</video>
+
+				<div class="items" id="item1"><img id="img1" src=""></div>
+				<div class="items" id="item2"><img id="img2" src=""></div>
+				<div class="items" id="item3"><img id="img3" src=""></div>
+				<div class="items" id="item4"><img id="img4" src=""></div>
+				<div class="items" id="item5"><img id="img5" src=""></div>
+				<div class="items" id="item6"><img id="img6" src=""></div>
+				<div class="items" id="item7"><img id="img7" src=""></div>
+				<div class="items" id="item8"><img id="img8" src=""></div>
+				<div class="items" id="item9"><img id="img9" src=""></div>
+				<div class="items" id="item10"><img id="img10" src=""></div>
+
+			</section>
+
+			<div id="music-container">
+  				<audio id="music-player" onended="playRandomSong()">
+    				<source src="../media/sounds/Assu! - Hiroshi Kitadani.mp3" type="audio/mp3">
+    				<source src="../media/sounds/We Are! - Hiroshi Kitadani.mp3" type="audio/mp3">
+    				<source src="../media/sounds/OVER THE TOP - Hiroshi Kitadani.mp3" type="audio/mp3">
+    				<source src="../media/sounds/The Peak - SEKAI NO OWARI.mp3" type="audio/mp3">
+    				<source src="../media/sounds/Believe - Folder 5.mp3" type="audio/mp3">
+  				</audio>
+			</div>
+
+			<div id="notification-container">
+				<p id="notification"></p>
+			</div>
+
+			<div id="contenedor-boton">
+				<img src="../media/images/boton10.png" id="spin10" onclick="gacha(10)"></button>
+			</div>	
+
+			<section id="coleccion">
+
+				<div id="legendario">
+
+					<p class="titulo">LEGENDARIOS</p>
+					<img class="coleccionable" id="col_0" src="../media/images/ssr.jpg">
+					<img class="coleccionable" id="col_1" src="../media/images/ssr.jpg">
+					<img class="coleccionable" id="col_2" src="../media/images/ssr.jpg">
+					<img class="coleccionable" id="col_3" src="../media/images/ssr.jpg">
+					<img class="coleccionable" id="col_4" src="../media/images/ssr.jpg">
+
+				</div>
+
+				<div id="epico">
+
+					<p class="titulo">EPICOS</p>
+					<img class="coleccionable" id="col_5" src="../media/images/sr.jpg">
+					<img class="coleccionable" id="col_6" src="../media/images/sr.jpg">
+					<img class="coleccionable" id="col_7" src="../media/images/sr.jpg">
+					<img class="coleccionable" id="col_8" src="../media/images/sr.jpg">
+					<img class="coleccionable" id="col_9" src="../media/images/sr.jpg">
+					<img class="coleccionable" id="col_10" src="../media/images/sr.jpg">
+					<img class="coleccionable" id="col_11" src="../media/images/sr.jpg">
+					<img class="coleccionable" id="col_12" src="../media/images/sr.jpg">
+					<img class="coleccionable" id="col_13" src="../media/images/sr.jpg">
+					<img class="coleccionable" id="col_14" src="../media/images/sr.jpg">
+					<img class="coleccionable" id="col_15" src="../media/images/sr.jpg">
+					<img class="coleccionable" id="col_16" src="../media/images/sr.jpg">
+					<img class="coleccionable" id="col_17" src="../media/images/sr.jpg">
+					<img class="coleccionable" id="col_18" src="../media/images/sr.jpg">
+					<img class="coleccionable" id="col_19" src="../media/images/sr.jpg">
+
+				</div>
+
+				<div id="comun">
+					
+					<p class="titulo">COMUNES</p>
+					<img class="coleccionable" id="col_20" src="../media/images/r.jpg">
+					<img class="coleccionable" id="col_21" src="../media/images/r.jpg">
+					<img class="coleccionable" id="col_22" src="../media/images/r.jpg">
+					<img class="coleccionable" id="col_23" src="../media/images/r.jpg">
+					<img class="coleccionable" id="col_24" src="../media/images/r.jpg">
+					<img class="coleccionable" id="col_25" src="../media/images/r.jpg">
+
+				</div>
+
+			</section>
+			
+		</main>
+	</body>
+</html>
