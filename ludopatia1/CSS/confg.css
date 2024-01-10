@@ -1,0 +1,305 @@
+@font-face {
+  font-family: "OP";
+  src: url("../media/fonts/OP.ttf");
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+#cabecera {
+  position: sticky;
+  display: flex;
+
+  top: 0;
+  width: 100vw;
+  height: 13vh;
+  
+  justify-content: space-between;
+  align-items: center;
+  background-image: url(../media/images/wood.jpg);
+  background-size: cover;
+  z-index: 100; 
+}
+
+nav{
+  display: flex;
+  width: 20vw;
+}
+
+.icon{
+  padding: 0.5vw;
+  width: 4vw;
+  height: 8vh;
+  margin: 0.1vh 1vw 0px 1vw;
+
+  border-radius: 10px;
+}
+
+#luffy:hover,#treasure:hover{
+  background-color: rgba(82, 82, 82, 0.419);
+}
+
+#logo{
+  margin-top: 2vh;
+  height: auto; 
+  width: 9vw;
+}
+
+#logo-container{
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  width: 60vw;
+}
+
+main{
+  padding: 5vh 5vw;
+  height: 77vh;
+  width: 90vw;
+}
+
+#pantalla{
+  display: flex;
+
+  padding: 2vh 0vw;
+  height: 68vh;
+  width: 90vw;
+
+  background-color: black;
+  justify-content: space-around;
+  background-image: url(../media/images/fondo_pantalla.jpg);
+  background-size: cover;
+  
+}
+
+#video-fondo {
+  position: fixed;
+
+  top: 13vh;
+  left: 0;
+  height: 87vh;
+  width: 100vw;
+
+  object-fit: cover; 
+  z-index: -1; /* Asegura que el video esté detrás del contenido */
+}
+
+.items{
+  position: relative;
+
+  height: 68vh;
+  width: 6.5vw;
+
+  transform: scale(0);
+  box-shadow: none;
+  opacity: 0;
+
+  transition: opacity 1s, transform 1s, box-shadow 1.5s;
+}
+
+.items img{
+  height: 68vh;
+  width: 6.5vw;
+}
+
+.pop-legendario{
+  opacity: 1;
+  transform: scale(1);
+  box-shadow: 0px 0px 30px 7.5px #fff700;
+}
+
+.pop-epico{
+  opacity: 1;
+  transform: scale(1);
+  box-shadow: 0px 0px 30px 7.5px #ef46f5;
+}
+
+.pop-comun{
+  opacity: 1;
+  transform: scale(1);
+  box-shadow: 0px 0px 30px 7.5px #4bedff;
+}
+
+
+#video{
+  position:absolute;
+
+  width: 90vw;
+  height: 68vh;
+
+  object-fit: cover;
+  z-index: 99;
+  visibility: hidden;
+}
+
+#contenedor-boton{
+  display: flex;
+
+  width: 100%;
+
+  justify-content: center; /* Centra los botones horizontalmente */
+}
+
+#spin10{
+  padding: 0.2vh 0 0 3vw;
+  width: 85px;
+  height: 85px;
+
+  cursor: pointer;
+  transition: transform 1s, box-shadow 1s;
+}
+
+#spin10:hover{
+  transform: scale(1.05);
+}
+
+#coleccion{
+  display: none;
+  
+  margin-top: -3vh;
+
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  
+}
+
+.coleccionable{
+  display: '';
+
+  margin: 5vh 2vw;
+  transition: transform, 1s;
+}
+
+.coleccionable:hover{
+  transform: scale(1.1);
+}
+
+.titulo{
+  margin: 190px 0 40px 0;
+
+  font-family:OP;
+  font-size: 100px;
+}
+
+#legendario img{
+  box-shadow: 0px 0px 20px 7.5px #fff700;
+}
+
+#epico img{
+  box-shadow: 0px 0px 20px 7.5px #ef46f5;
+}
+
+#comun img{
+  box-shadow: 0px 0px 20px 7.5px #4bedff;
+}
+
+#switch-container{
+  width: 20vw;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 6vw;
+  height: 5vh;
+  margin-left: 200px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  
+  border-radius: 34px;
+  cursor: pointer;
+  background-image: url(../media/images/no_sound.jpg);
+  background-size: cover;
+  transition: .4s;
+}
+
+.slider:before { /*bola del slider*/
+  position: absolute;
+  content: "";
+
+  height: 4.1vh;
+  width: 2vw;
+  left: 4px;
+  bottom: 4px;
+
+  border-radius: 50%;
+  background-color: white;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-image: url(../media/images/sound.jpg);
+  background-size: cover;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(3.5vw);
+}
+
+#music-container{
+  display: none;
+}
+
+#notification-container {
+  position: fixed;
+  background-image: url(../media/images/wood.jpg);
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
+  display: none; /* inicialmente oculto */
+  z-index: 999; /* asegura que esté por encima de otros elementos */
+  bottom: 20px;
+  right: 20px;
+  animation: slideInRight 3s forwards, slideOutRight 3s forwards 6s; 
+}
+
+
+#notification {
+  font-size: 20px;
+  font-weight: bold;
+}
+/* Clase para mostrar la notificación */
+#notification-container.show {
+  display: block;
+  opacity: 1; 
+}
+
+@keyframes slideInRight {
+  from {
+    right: -900px; /* empieza fuera del borde derecho */
+  }
+  to {
+    right: 30px; 
+  }
+}
+
+@keyframes slideOutRight {
+  from {
+    right: 30px; 
+  }
+  to {
+    right: -900px; /* Termina fuera del borde derecho */
+  }
+}
